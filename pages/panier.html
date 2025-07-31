@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Panier - WoréStor</title>
+  <link rel="stylesheet" href="../assert/CSS/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="nav active">
+      <div class="logo"><span>W</span>oréStor</div>
+      <div class="menu">
+        <ul class="nav-list">
+          <il><a href="../index.html">Accueil</a></il>
+          <il><a href="../pages/Nouveautés.html">Nouveautés</a></il>
+          <il class="deroulant"><a href="">Catalogues</a>
+            <ul class="sous-menu">
+              <li><a href="../pages/Vetements.html">Vêtements</a></li>
+              <li><a href="../pages/chaussures.html">Chaussures</a></li>
+              <li><a href="../pages/Bijoux.html">Bijoux</a></li>
+              <li><a href="../pages/Sac.html">Sac</a></li>
+            </ul>
+          </il>
+          <il><a href="../pages/Contact.html">Contact</a></il>
+        </ul>
+      </div>
+      <div class="navs active">
+        <i id="recherche" class="fas fa-search icon"></i>
+        <i id="panier" class="fas fa-cart-shopping icon"></i>
+        <i id="user" class="fas fa-user icon"></i>
+        <i id="menu" class="fas fa-bars icon"></i>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section style="max-width:900px;margin:40px auto 0 auto;">
+      <h1 style="text-align:center;margin-bottom:32px;">Votre Panier</h1>
+      <div id="panier-vide" style="text-align:center;color:#c2185b;display:none;">
+        <i class="fas fa-shopping-cart" style="font-size:48px;margin-bottom:12px;"></i>
+        <p>Votre panier est vide.</p>
+      </div>
+      <div style="overflow-x:auto;">
+        <table id="panier-table" style="width:100%;border-collapse:collapse;background:#fff;box-shadow:0 2px 16px 0 rgba(0,0,0,0.10);">
+          <thead style="background:#c2185b;color:#fff;">
+            <tr>
+              <th style="padding:12px;">Image</th>
+              <th style="padding:12px;">Produit</th>
+              <th style="padding:12px;">Prix Unitaire</th>
+              <th style="padding:12px;">Quantité</th>
+              <th style="padding:12px;">Total</th>
+              <th style="padding:12px;">Action</th>
+            </tr>
+          </thead>
+          <tbody id="panier-content">
+            <!-- Les produits ajoutés s'affichent ici dynamiquement -->
+          </tbody>
+        </table>
+      </div>
+      <div id="panier-total" style="text-align:right;font-size:20px;font-weight:bold;margin-top:24px;"></div>
+      <div style="text-align:right;margin-top:18px;">
+        <a href="../pages/index.html" class="btn">Continuer mes achats</a>
+        <a href="#" class="btn" style="background:rgb(152,0,34);">Valider la commande</a>
+      </div>
+    </section>
+  </main>
+  <script src="../assert/JS/panier.js"></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assert/CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display&display=swap"
+ rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+    <div class="nav active" >
+        <div class="logo"><span>W</span>oréStor</div>
+   <div class="menu">
+    <ul class="nav-list">
+        <il><a href="" class="active">Aceuil</a></il>
+        <il><a href="../pages/Nouveautés.html">Nouveautés</a></il>
+        <il class="deroulant"><a href="">Catalogues</a>
+        <ul class="sous-menu">
+            <li><a href="../pages/Vetements.html">Vetements</a></li>
+            <li><a href="../pages/chaussures.html">Chaussures</a></li>
+            <li><a href="../pages/Bijoux.html">Bijoux</a></li>
+            <li><a href="../pages/Sac.html">Sac</a></li>
+        </ul>
+        </il>
+        <il><a href="../pages/Contact.html">Contact</a></il>
+    </ul>
+   </div>
+ <div class="navs active ">
+  <i id="recherche" class="fas fa-search icon"></i>
+  <i id="panier" class="fas fa-cart-shopping icon"></i>
+  <i id="user" class="fas fa-user icon"></i>
+  <i id="menu" class="fas fa-bars icon"></i>
+</div>
+
+ <!-- la rechercher -->
+  <di class="bar-recherche">
+    <input type="search" placeholder="Rechercher un produit">
+ </di> 
+    <!-- la panier -->
+  <div class="cart-panier" >
+    <div class="cart-containre">
+   <img src="../assert/images/[000001].jpg" alt="">
+   <div class="cart-text">
+    <h3>T-shirt</h3>
+    <span>100000GN</span>
+  </div>
+  <i class="fas fa-trash box" ></i>
+
+   </div>
+
+       <div class="cart-containre">
+   <img src="../assert/images/[000002].jpg" alt="">
+   <div class="cart-text">
+    <h3>T-shirt</h3>
+    <span>100000GN</span>
+  </div>
+  <i class="fas fa-trash  box" ></i>
+  
+   </div>
+   <h2>Total:10000000GN</h2>
+   <a href="../pages/panier.html" class="btn">Voir panier </a>
+ </div>  
+ <!-- compte -->
+
+  <div class="user-container">
+    <h2>Connecter vous</h2>
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Mot de passe">
+    <input type="submit" value="Se connecter" class="btn-user">
+    <p>Mot de passe oublié <a href="">Reinitialiser,le mot de passe</a></p>
+    <p>Pas de compte <a href="">Créer un compte</a></p>
+ </div> 
+    </div>
+
+    </header>
+    <!-- fin de la barre de navigation -->
+     <!-- carrousol -->
+      <div class="carousel">
+  <div class="carousel-item active">
+    <img src="../assert/images/gros-plan-de-belles-jeunes-femmes-africaines-avec-des-sacs-a-provisions.jpg" alt="Vêtements">
+    <div class="caption">
+      <h2>Exprime ton style, affirme ta présence</h2>
+      <p>Découvrez notre collection de vêtements raffinés conçus pour sublimer votre silhouette en toute occasion.</p>
+       <a href="" class="btn">Voir Plus </a>
+    </div>
+  </div>
+
+  <div class="carousel-item">
+    <img src="../assert/images/une-blogueuse-brune-montrant-le-talon-a-la-camera.jpg" alt="Chaussures">
+    <div class="caption">
+      <h2>Faites un pas vers l’élégance</h2>
+      <p>Nos chaussures allient design moderne et confort absolu pour accompagner chacun de vos pas.</p>
+         <a href="" class="btn">Voir Plus </a>
+    </div>
+  </div>
+
+  <div class="carousel-item">
+    <img src="../assert/images/un-sac-suspendu-a-un-meuble-a-l-interieur.jpg" alt="Sacs">
+    <div class="caption">
+      <h2>L’accessoire qui change tout</h2>
+      <p>Ajoutez une touche de caractère à vos tenues avec nos sacs chics et pratiques.</p>
+         <a href="" class="btn">Voir Plus </a>
+    </div>
+  </div>
+
+  <div class="carousel-item">
+    <img src="../assert/images/9644.jpg" alt="Bijoux">
+    <div class="caption">
+      <h2>Brillez sans en faire trop</h2>
+      <p>Découvrez nos bijoux délicats et élégants, pensés pour sublimer chaque détail de votre look.</p>
+         <a href="" class="btn">Voir Plus </a>
+    </div>
+  </div>
+</div>
+
+    <!-- Cartes produits -->
+    <section>
+      <div class="cart-container">
+        <div class="cart">
+          <img src="../assert/images/a2b7f6e1-75c8-44c0-8722-48f34468ccb1.jpeg" alt="T-shirt premium">
+          <div class="cart-body">
+            <div class="cart-title">Casquette</div>
+            <div class="cart-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star inactive"></i>
+            </div>
+            <div class="cart-price">100 000 GNF</div>
+            <button class="cart-btn btn">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="cart">
+          <img src="../assert/images/64f684a4-29bf-48d4-9e59-08906704663e.jpeg" alt="Sac tendance">
+          <div class="cart-body">
+            <div class="cart-title">Nuinette</div>
+            <div class="cart-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star inactive"></i>
+            </div>
+            <div class="cart-price">250 000 GNF</div>
+            <button class="cart-btn btn">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="cart">
+          <img src="../assert/images/de Dior Homme __.jpeg" alt="Ensemble femme">
+          <div class="cart-body">
+            <div class="cart-title">de Dior Homme </div>
+            <div class="cart-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star inactive"></i>
+            </div>
+            <div class="cart-price">350 000 GNF</div>
+            <button class="cart-btn btn">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="cart">
+          <img src="../assert/images/Casual Shoes For Men With Jeans Stylish.jpeg" alt="Chaussures homme">
+          <div class="cart-body">
+            <div class="cart-title">Casual Shoes For Men With Jeans Stylish</div>
+            <div class="cart-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star inactive"></i>
+            </div>
+            <div class="cart-price">180 000 GNF</div>
+            <button class="cart-btn btn">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="cart-container">
+        <div class="cart">
+          <img src="../assert/images/Adolescent Fille Unicolore Top À Fines Brides… (1).jpeg" alt="Ensemble femme">
+          <div class="cart-body">
+            <div class="cart-title">Adolescent Fille Unicolore Top À Fines Brides</div>
+            <div class="cart-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star inactive"></i>
+            </div>
+            <div class="cart-price">350 000 GNF</div>
+            <button class="cart-btn btn">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="cart">
+          <img src="../assert/images/a08aefe6-3540-4865-abd2-85e7b023095a.jpeg" alt="Ensemble femme">
+          <div class="cart-body">
+            <div class="cart-title">Montre</div>
+            <div class="cart-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star inactive"></i>
+            </div>
+            <div class="cart-price">350 000 GNF</div>
+            <button class="cart-btn btn">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="cart">
+          <img src="../assert/images/2 pièces Ensemble de femme élégante, veste et… (2).jpeg" alt="Ensemble femme">
+          <div class="cart-body">
+            <div class="cart-title">Ensemble femme</div>
+            <div class="cart-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star inactive"></i>
+            </div>
+            <div class="cart-price">350 000 GNF</div>
+            <button class="cart-btn btn">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="cart">
+          <img src="../assert/images/Femme Chaussures Plates À Nœud Papillon À Bout….jpeg" alt="Ensemble femme">
+          <div class="cart-body">
+            <div class="cart-title">Femme Chaussures Plates À Nœud Papillon À Bout</div>
+            <div class="cart-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star inactive"></i>
+            </div>
+            <div class="cart-price">350 000 GNF</div>
+            <button class="cart-btn btn">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>WoréStor</h3>
+          <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Nouveautés</a></li>
+            <li><a href="#">Catalogues</a></li>
+            <li><a href="#">Avis</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li>Email : <a href="mailto:contact@worestor.com">contact@worestor.com</a></li>
+            <li>Tél : <a href="tel:+224600000000">+224 600 00 00 00</a></li>
+            <li>Adresse : Conakry, Guinée</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Suivez-nous</h3>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 WoréStor. Tous droits réservés.
+      </div>
+    </footer>
+    <script src="../assert/JS/script.js"></script>
+</body>
+</html>
