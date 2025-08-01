@@ -180,9 +180,7 @@ nav.active{
   /* border-radius: 50%; */
   cursor: pointer;
 }
-#menu{
-    display: none;
-}
+
 /* recherche */
 .bar-recherche{
     position: absolute;
@@ -605,4 +603,259 @@ footer {
     width: 100vw;
     max-width: 100vw;
   }
+}
+
+
+
+/* General Responsive Fixes for Main Containers */
+@media (max-width: 900px) {
+    /* Ensure main containers don't cause horizontal scrolling */
+    body {
+        overflow-x: hidden;
+    }
+    
+    header {
+        padding: 20px 0; /* Adjusted padding to be more consistent */
+        width: 100%;
+    }
+
+    .nav {
+        padding: 15px 20px; /* Reduced padding for the fixed header */
+    }
+
+    .navs {
+        right: 20px; /* Aligns the icon group properly */
+    }
+
+    .menu {
+        /* Mobile menu fixes */
+        width: 250px;
+        /* Ensure the menu doesn't overflow its parent */
+        max-width: 80vw;
+    }
+
+    .bar-recherche.active {
+        /* Adjust the panel position to fit on screen */
+        right: 15px;
+        width: calc(100% - 30px); /* Fill the screen width with a small margin */
+    }
+    
+    .bar-recherche input {
+        width: 100%; /* Make sure the input field takes full width */
+    }
+
+    .cart-panier.active,
+    .user-container.active {
+        /* Adjust the panel position to fit on screen */
+        right: 15px;
+        width: calc(100% - 30px); /* Fill the screen width with a small margin */
+        top: 80px; /* Pushes the panels down to avoid overlapping the header */
+    }
+
+    .cart-panier .cart-containre {
+        flex-direction: column; /* Stack cart items vertically for better readability */
+        align-items: center;
+        text-align: center;
+    }
+
+    .cart-containre img {
+        width: 60px; /* Smaller images in the cart panel */
+    }
+}
+
+/* More specific adjustments for very small screens */
+@media (max-width: 500px) {
+    .nav {
+        padding: 15px 10px; /* Even smaller padding for very narrow screens */
+    }
+
+    .logo {
+        font-size: 22px; /* Smaller logo */
+    }
+
+    .navs {
+        right: 10px; /* Move icons closer to the edge */
+        gap: 10px;
+    }
+
+    .cart-container {
+        grid-template-columns: 1fr; /* Single column layout for small phones */
+        padding: 0 10px;
+        gap: 20px;
+        justify-items: center; /* Center the cards */
+    }
+
+    .cart {
+        width: 100%; /* Ensure the card takes up full width on small screens */
+        max-width: 300px; /* Add a max-width to prevent cards from getting too wide on slightly larger phones */
+    }
+
+    .carousel, 
+    .carousel-item, 
+    .carousel-item img {
+        height: 200px; /* Reduce carousel height on small screens */
+    }
+    
+    .caption {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 10px;
+    }
+
+    .caption h2 {
+        font-size: 18px;
+    }
+
+    .caption p {
+        font-size: 12px;
+    }
+
+    .footer-container {
+        padding: 0 15px;
+    }
+}
+
+
+
+
+/* Add a new icon for the hamburger menu */
+.navs #menu {
+    display: none; /* By default, hide on desktop */
+}
+
+/* Show the hamburger menu icon on screens smaller than 900px */
+@media (max-width: 900px) {
+    .navs #menu {
+        display: block; /* Show the hamburger menu on mobile */
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .menu {
+        /* This is the mobile menu style, it will slide in from the left */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .menu.active {
+        /* When the menu is active, it slides into view */
+        transform: translateX(0);
+    }
+}
+
+
+
+/* Navigation sur les écrans moyens et petits */
+@media (max-width: 900px) {
+    .nav {
+        padding: 20px 20px; /* Réduit le padding pour ne pas avoir d'espace excessif */
+    }
+
+    .navs {
+        right: 20px; /* Ajuste la position des icônes pour qu'elles restent à l'intérieur de l'écran */
+    }
+
+    .menu {
+        /* Le menu devient une barre latérale sur mobile */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px; /* Définissez une largeur pour le menu mobile */
+        height: 100%;
+        background-color: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 60px;
+        z-index: 1001; /* S'assure que le menu est au-dessus des autres éléments */
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav-list a {
+        padding: 15px 20px;
+        width: 100%;
+        border-bottom: 1px solid #e0e0e0; /* Ajoute un séparateur pour les liens */
+    }
+
+    /* Rend les menus déroulants plus adaptés aux écrans tactiles */
+    .deroulant.open > .sous-menu {
+        position: static;
+        display: block;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 0;
+        min-width: 100%;
+    }
+}
+
+/* Grille de produits */
+@media (max-width: 900px) {
+    .cart-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+        gap: 16px;
+        padding: 0 16px; /* Ajoute un padding pour éviter que les cartes ne touchent les bords */
+    }
+    .cart {
+        width: 100%; /* Les cartes remplissent l'espace disponible */
+    }
+}
+
+@media (max-width: 550px) {
+    .cart-container {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        padding: 0 12px;
+    }
+}
+
+/* Pied de page */
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        padding: 0 20px;
+        text-align: center;
+    }
+    .footer-col {
+        margin-bottom: 24px;
+        min-width: 100%;
+    }
+    .footer-col h3 {
+        text-align: center;
+    }
+    .footer-col ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+/* Visibilité des panneaux sur mobile */
+@media (max-width: 900px) {
+    .bar-recherche.active {
+        right: 12px;
+    }
+    .cart-panier.active {
+        right: 12px;
+    }
+    .user-container.active {
+        right: 12px;
+    }
+    input {
+        width: 100%;
+    }
+    .user-container input {
+        width: 100%;
+    }
+    .cart-containre img {
+        width: 70px;
+    }
 }

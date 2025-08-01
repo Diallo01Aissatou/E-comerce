@@ -21,8 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
     panierVide.style.display = 'none';
     panier.forEach((produit, index) => {
       const tr = document.createElement('tr');
+      // Correction du chemin de l'image pour qu'il soit relatif à la page panier.html
+      let imageSrc = produit.image;
+      if (imageSrc && !imageSrc.startsWith('..') && !imageSrc.startsWith('http') && !imageSrc.startsWith('/')) {
+        imageSrc = '../' + imageSrc;
+      }
       tr.innerHTML = `
-        <td style="text-align:center;"><img src="${produit.image}" alt="${produit.nom}" style="width:60px;height:60px;border-radius:8px;object-fit:cover;"></td>
+        <td style="text-align:center;"><img src="${imageSrc}" alt="${produit.nom}" style="width:60px;height:60px;border-radius:8px;object-fit:cover;"></td>
         <td style="font-weight:600;">${produit.nom}</td>
         <td style="color:crimson;font-weight:600;">${produit.prix} GNF</td>
         <td>
@@ -61,3 +66,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   afficherPanier();
 });
+
+
+
+
+
+
+
+
+
+
+

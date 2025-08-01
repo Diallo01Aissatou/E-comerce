@@ -1,3 +1,327 @@
+    *{
+      font-family: serif;
+
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      list-style: none;
+      outline: none;
+      border: none;
+      scroll-behavior: smooth;
+
+}
+span{
+    font-style: italic;
+    color: black;
+}
+.logo{
+    color: crimson;
+    font-size: 25px;
+    font-weight: bold;
+}
+/* #root{
+   --accent-color: crimson; 
+   --accent2:rgb(152,0,34);
+   --text: #333;
+   --rigth:#ffff;
+   --second:#e2e2e2;
+   --box:2px 2px 10px 2px rgba(0, 0, 0, 0.2);
+
+} */
+
+img{
+    width: 100%;
+}
+header{
+    padding: 30px 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100vw;
+    /* max-width: 100vw; */
+}
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: crimson;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    clip-path: polygon(100% 0%,93% 50%,86% 99%,0% 100%,7% 47%, 13% 0%);
+      transition: .5s ease-in-out;
+      position: relative;
+      /* overflow : hidden; */
+}
+.btn::after{
+
+    content: "";
+ width: 10px;
+ height: 200Px;
+ background-color: #ffffff63;
+ position: absolute;
+left: 360px;
+top: -16px;
+padding: 15px -18px;
+transform: rotate(20deg);
+  transition: .2s ease-in-out;
+
+}
+.btn:hover{
+    background-color:rgb(152,0,34) ;
+
+
+}
+.btn:hover::after{
+    left: -150px;
+
+}
+/* Navigation */
+.nav{
+    
+    position: fixed;
+    width: 100%;
+    top:0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    transition: .5s ease-in-out;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+nav.active{
+    box-shadow: 0 5pxpx 7px 0 rgba(0, 0, 0, 0.2);
+
+}
+.menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-list {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+.nav-list il, .nav-list li {
+    list-style: none;
+}
+.nav-list a {
+    color: #333;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 6px 10px;
+    /* border-radius: 20px; */
+    /* transition: background 0.2s, color 0.2s; */
+}
+.nav-list, .nav-list a:hover {
+    /* background: #ffe6ec; */
+    color: crimson;
+}
+.navs {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    padding: 8px 18px;
+    /* box-shadow: 0 2px 8px 0 rgba(220, 20, 60, 0.07); */
+    position: absolute;
+    top: 20px;
+    right: 80px;
+    z-index: 1002;
+}
+.sous-menu {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 2px 2px 10px 2px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin-top: 8px;
+    min-width: 180px;
+    z-index: 1003;
+    padding: 10px 0;
+}
+.sous-menu li {
+    padding: 8px 20px;
+    white-space: nowrap;
+}
+.sous-menu li a {
+    color: #333;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+.sous-menu li a:hover {
+    color: crimson;
+}
+.deroulant {
+    position: relative;
+}
+.deroulant.open > .sous-menu {
+    display: block;
+    animation: fadeIn 0.2s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.navs i {
+  font-size: 20px;
+  z-index: 1002;
+}
+
+/* Style au survol de chaque icône */
+.icon:hover {
+  color: crimson;
+  /* color: #fff */
+  /* display: inline-block; */
+  /* padding: 5px; */
+  /* border-radius: 50%; */
+  cursor: pointer;
+}
+/* recherche */
+.bar-recherche{
+    position: absolute;
+    top: 110px;
+    right: -110%;
+    transition: .2s ease-in-out;
+    z-index: 1001;
+}
+input{
+    padding: 10px;
+    border-radius: 70px;
+    width: 280px;
+    box-shadow:2px 2px 10px 2px rgba(0, 0, 0, 0.2) ;
+
+}
+.bar-recherche.active{
+    right: 16px;
+}
+/* panier */
+.cart-panier{
+    position: absolute;
+    top: 100%;
+    right: -110%;
+    display: flex;
+    align-items: center;
+    flex-direction:column ;
+    row-gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: .2s ease-in-out;
+    z-index: 1001;
+}
+.cart-panier.active{
+    right: 16px;
+}
+.cart-containre{
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+}
+.cart-containre img{
+    width: 100px;
+    /* height: 100px; */
+}
+.cart-containre h3{
+   font-size: 16px;
+
+}
+.cart-containre .box{
+    font-size: 20px;
+    cursor: pointer;
+}
+.cart-containre .box:hover{
+    color: crimson;
+}
+.cart-containre h2{
+    font-size: 20px;
+
+}
+.cart-containre.active{
+    right: 16px;
+}
+/* Compte utilisateur */
+.user-container {
+    position: absolute;
+    top: 110px;
+    right: -100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 15px;
+    /* min-width: 220px; */
+    z-index: 1001;
+    transition: .2s ease-in-out;
+}
+.user-container h2{
+ font-size: 16px;
+}
+.user-container.active {
+    right: 16px;
+}
+.user-container input{
+    border-bottom: 1px solid crimson;
+    padding: 8px;
+       width: 100%;
+    height: 30px;
+}
+.user-container p{
+    font-size: 15px;
+}
+.user-container .btn-user{
+    background-color: crimson;
+    color: #fff;
+    font-weight: bold;
+     width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: .2s ease-in-out;
+    
+}
+.user-container .btn-user:hover{
+ background-color:   rgb(152,0,34);
+}
+.user-container p a{
+    color: crimson;
+    text-decoration: underline;
+}
+.user-container p a:hover{
+    color: rgb(152,0,34) ;
+}
+
+/* Sous-menu */
+.sous-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color:#fff;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.sous-menu li a {
+  padding: 12px 15px;
+  color:#333;
+}
+
+.deroulant:hover .sous-menu {
+  display: block;
+}
+
+
 /* Styles professionnels pour le tableau du panier WoréStor */
 #panier-table {
   width: 100%;
@@ -54,21 +378,185 @@
   margin-top: 24px;
   color: #c2185b;
 }
-@media (max-width: 700px) {
-  #panier-table th, #panier-table td {
-    padding: 7px;
-    font-size: 13px;
-  }
-  #panier-table td img {
-    width: 40px;
-    height: 40px;
-  }
-  .btn {
-    padding: 5px 12px;
-    font-size: 12px;
-  }
-  .panier-quantite {
-    width: 40px;
-    font-size: 13px;
-  }
+
+
+
+
+
+
+/* Cache l'icône du menu par défaut */
+.navs #menu {
+    display: none;
 }
+
+/* Ajustements pour les écrans de moins de 900px */
+@media (max-width: 900px) {
+    /* Cache le menu desktop et affiche l'icône du hamburger */
+    .menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 60px;
+        z-index: 1001;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Affiche le menu mobile lorsqu'il est actif */
+    .menu.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    /* Affiche l'icône du menu hamburger */
+    .navs #menu {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Ajuste la navigation pour les petits écrans */
+    .nav {
+        padding: 15px 20px;
+    }
+
+    /* Ajuste la position des icônes de la navigation */
+    .navs {
+        right: 20px;
+        gap: 15px;
+    }
+
+    /* Aligne les éléments du menu de manière verticale */
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    /* Ajoute un espacement et des bordures pour les liens du menu mobile */
+    .nav-list il, .nav-list li {
+        width: 100%;
+    }
+
+    .nav-list a {
+        padding: 15px 20px;
+        width: 100%;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    /* Gère le sous-menu pour qu'il soit statique et vertical sur mobile */
+    .deroulant > .sous-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 0;
+        padding: 0;
+        width: 100%;
+        display: none; /* Cache le sous-menu par défaut */
+    }
+
+    .deroulant.open > .sous-menu {
+        display: block; /* Affiche le sous-menu quand il est "ouvert" */
+    }
+
+    .sous-menu li {
+        padding-left: 40px; /* Ajoute un retrait pour les éléments du sous-menu */
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Ajuste les panneaux latéraux (recherche, panier, utilisateur) */
+    .bar-recherche,
+    .cart-panier,
+    .user-container {
+        position: fixed;
+        top: 80px;
+        right: -110%;
+        width: calc(100% - 30px);
+        max-width: 320px;
+        transition: right .3s ease-in-out;
+    }
+
+    /* Positionne les panneaux lorsqu'ils sont actifs */
+    .bar-recherche.active,
+    .cart-panier.active,
+    .user-container.active {
+        right: 15px;
+    }
+
+    /* Ajuste la largeur des entrées de texte */
+    input {
+        width: 100%;
+    }
+}
+
+/* Ajustements pour les écrans de moins de 600px */
+@media (max-width: 600px) {
+    .nav {
+        padding: 12px 10px;
+    }
+    .logo {
+        font-size: 22px;
+    }
+    .navs {
+        right: 10px;
+        gap: 10px;
+    }
+    .navs i {
+        font-size: 18px;
+    }
+
+    /* Réduit la taille des panneaux latéraux */
+    .bar-recherche,
+    .cart-panier,
+    .user-container {
+        top: 70px;
+        width: calc(100% - 20px);
+        right: 10px;
+    }
+}
+
+
+
+
+/* Add a new icon for the hamburger menu */
+.navs #menu {
+    display: none; /* By default, hide on desktop */
+}
+
+/* Show the hamburger menu icon on screens smaller than 900px */
+@media (max-width: 900px) {
+    .navs #menu {
+        display: block; /* Show the hamburger menu on mobile */
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .menu {
+        /* This is the mobile menu style, it will slide in from the left */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .menu.active {
+        /* When the menu is active, it slides into view */
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+

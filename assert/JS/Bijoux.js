@@ -69,3 +69,29 @@ user.addEventListener('click',()=>{
     div.classList.remove('active');
     cont.classList.remove('active');
 });
+
+// Find the menu icon and the menu itself
+const menuIcon = document.getElementById('menu');
+const menu = document.querySelector('.menu');
+
+// Add a click event listener to the menu icon
+menuIcon.addEventListener('click', () => {
+    // Toggle the 'active' class on the menu
+    menu.classList.toggle('active');
+    
+    // Optional: close other fly-out panels (search, cart, user)
+    const cont = document.querySelector('.bar-recherche');
+    const div = document.querySelector(".cart-panier");
+    const userContainer = document.querySelector('.user-container');
+    
+    cont.classList.remove('active');
+    div.classList.remove('active');
+    userContainer.classList.remove('active');
+});
+
+// Close the menu if a link inside it is clicked
+document.querySelectorAll('.menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('active');
+    });
+});

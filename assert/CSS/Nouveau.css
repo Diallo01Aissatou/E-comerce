@@ -507,3 +507,148 @@ footer {
     padding: 24px 8px 10px 8px;
   }
 }
+
+
+
+/* Add a new icon for the hamburger menu */
+.navs #menu {
+    display: none; /* By default, hide on desktop */
+}
+
+/* Show the hamburger menu icon on screens smaller than 900px */
+@media (max-width: 900px) {
+    .navs #menu {
+        display: block; /* Show the hamburger menu on mobile */
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .menu {
+        /* This is the mobile menu style, it will slide in from the left */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .menu.active {
+        /* When the menu is active, it slides into view */
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+/* Navigation sur les écrans moyens et petits */
+@media (max-width: 900px) {
+    .nav {
+        padding: 20px 20px; /* Réduit le padding pour ne pas avoir d'espace excessif */
+    }
+
+    .navs {
+        right: 20px; /* Ajuste la position des icônes pour qu'elles restent à l'intérieur de l'écran */
+    }
+
+    .menu {
+        /* Le menu devient une barre latérale sur mobile */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px; /* Définissez une largeur pour le menu mobile */
+        height: 100%;
+        background-color: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 60px;
+        z-index: 1001; /* S'assure que le menu est au-dessus des autres éléments */
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav-list a {
+        padding: 15px 20px;
+        width: 100%;
+        border-bottom: 1px solid #e0e0e0; /* Ajoute un séparateur pour les liens */
+    }
+
+    /* Rend les menus déroulants plus adaptés aux écrans tactiles */
+    .deroulant.open > .sous-menu {
+        position: static;
+        display: block;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 0;
+        min-width: 100%;
+    }
+}
+
+/* Grille de produits */
+@media (max-width: 900px) {
+    .cart-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+        gap: 16px;
+        padding: 0 16px; /* Ajoute un padding pour éviter que les cartes ne touchent les bords */
+    }
+    .cart {
+        width: 100%; /* Les cartes remplissent l'espace disponible */
+    }
+}
+
+@media (max-width: 550px) {
+    .cart-container {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        padding: 0 12px;
+    }
+}
+
+/* Pied de page */
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        padding: 0 20px;
+        text-align: center;
+    }
+    .footer-col {
+        margin-bottom: 24px;
+        min-width: 100%;
+    }
+    .footer-col h3 {
+        text-align: center;
+    }
+    .footer-col ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+/* Visibilité des panneaux sur mobile */
+@media (max-width: 900px) {
+    .bar-recherche.active {
+        right: 12px;
+    }
+    .cart-panier.active {
+        right: 12px;
+    }
+    .user-container.active {
+        right: 12px;
+    }
+    input {
+        width: 100%;
+    }
+    .user-container input {
+        width: 100%;
+    }
+    .cart-containre img {
+        width: 70px;
+    }
+}

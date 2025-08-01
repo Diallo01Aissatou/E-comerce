@@ -336,6 +336,9 @@ input{
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+
+
 .contact-form {
   flex: 1 1 320px;
   background: #fff;
@@ -448,3 +451,195 @@ input{
     padding: 18px 4px;
   }
 }
+
+
+
+
+
+
+
+
+/*
+ * ===================================================
+ * RESPONSIVE DESIGN - MEDIA QUERIES
+ * ===================================================
+ */
+
+/* Règle globale pour éviter tout débordement horizontal sur les mobiles */
+body {
+    overflow-x: hidden;
+}
+
+/* Cache l'icône du menu par défaut sur les grands écrans */
+#menu {
+    display: none;
+}
+
+/*
+ * Ajustements pour les écrans de taille moyenne (max-width: 900px)
+ */
+@media (max-width: 900px) {
+    /* La navigation devient une barre fixe en haut de l'écran */
+    .nav {
+        padding: 15px 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Le conteneur des icônes est repositionné pour être flexible dans la nav */
+    .navs {
+        position: static;
+        right: auto;
+        top: auto;
+        transform: none;
+        gap: 15px;
+        z-index: 1005;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Affiche l'icône du menu hamburger sur mobile */
+    #menu {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Le menu principal est caché et s'affiche sous forme de barre latérale */
+    .menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 60px;
+        z-index: 1001;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Le menu s'affiche lorsque la classe "active" est ajoutée par JavaScript */
+    .menu.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    /* Aligne les éléments du menu de navigation de manière verticale */
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    /* Ajuste les liens pour qu'ils prennent toute la largeur et aient une bordure */
+    .nav-list il, .nav-list li {
+        width: 100%;
+    }
+    .nav-list a {
+        padding: 15px 20px;
+        width: 100%;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    /* Gère le sous-menu pour qu'il soit statique et vertical sur mobile */
+    .deroulant > .sous-menu {
+        position: static;
+        box-shadow: none;
+        padding: 0;
+        width: 100%;
+    }
+    .sous-menu li {
+        padding-left: 40px; /* Ajoute un retrait pour les éléments du sous-menu */
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Positionne les panneaux latéraux (recherche, panier, utilisateur) */
+    .bar-recherche,
+    .cart-panier,
+    .user-container {
+        position: fixed;
+        top: 80px;
+        right: -110%; /* Cache les panneaux hors de l'écran */
+        width: calc(100% - 30px);
+        max-width: 320px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        transition: right .3s ease-in-out;
+        z-index: 1004;
+    }
+
+    /* Les panneaux s'affichent lorsqu'ils sont actifs */
+    .bar-recherche.active,
+    .cart-panier.active,
+    .user-container.active {
+        right: 15px;
+    }
+    
+    /* Gère la largeur de l'input dans la barre de recherche */
+    .bar-recherche input {
+        width: 100%;
+    }
+
+    /* Ajuste la largeur des conteneurs de la page de contact */
+    .contact-container {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .contact-section {
+        padding: 18px 4px;
+    }
+}
+
+/* ---------------------------------------------------- */
+/* Ajustements pour les très petits écrans (max-width: 600px) */
+/* ---------------------------------------------------- */
+@media (max-width: 600px) {
+    .nav {
+        padding: 12px 10px;
+    }
+    .logo {
+        font-size: 22px;
+    }
+    .navs {
+        gap: 10px;
+    }
+    .navs i {
+        font-size: 18px;
+    }
+
+    /* Réduit l'espace pour les panneaux latéraux */
+    .bar-recherche,
+    .cart-panier,
+    .user-container {
+        top: 70px;
+        width: calc(100% - 20px);
+        right: 10px;
+    }
+    
+    /* Gère la section de contact */
+    .contact-section {
+        padding: 18px 10px;
+    }
+    .contact-form,
+    .contact-info {
+        flex: 1 1 100%;
+    }
+}
+
+
+
